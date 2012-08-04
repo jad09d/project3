@@ -22,25 +22,27 @@ public class OrgTab extends Activity {
 	    setContentView(R.layout.tab);
 
 	    tabhost = (TabHost) findViewById(android.R.id.tabhost);
-	    
 
 	    lam = new LocalActivityManager(this, false);
 	    lam.dispatchCreate(savedInstanceState);
 	    tabhost.setup(lam);
 	    
 	    tabIntent = new Intent(OrgTab.this, OrgProfile.class);
+	    tabIntent.putExtras(getIntent().getExtras());
 	    spec = tabhost.newTabSpec("Profile");
 	    spec.setIndicator("Profile");
 	    spec.setContent(tabIntent);
 	    tabhost.addTab(spec);
 	    
 	    tabIntent = new Intent(OrgTab.this, OrgEvents.class);
+	    tabIntent.putExtras(getIntent().getExtras());
 	    spec = tabhost.newTabSpec("Events");
 	    spec.setIndicator("Events");
 	    spec.setContent(tabIntent);
 	    tabhost.addTab(spec);
 	    
 	    tabIntent = new Intent(OrgTab.this, OrgFollow.class);
+	    tabIntent.putExtras(getIntent().getExtras());
 	    spec = tabhost.newTabSpec("Follow");
 	    spec.setIndicator("Follow");
 	    spec.setContent(tabIntent);

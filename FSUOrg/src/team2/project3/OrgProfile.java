@@ -25,7 +25,8 @@ public class OrgProfile extends Activity {
 	    Bundle extras = myIntent.getExtras();
 	    
 	    if(extras != null) {
-	      OrgName.setText(extras.getString("OrgName"));
+	      OrgName.setText(extras.getString("name"));
+	      OrgDescription.setText(extras.getString("descript"));
 	      //set OrgPic 
 	    }
 	}
